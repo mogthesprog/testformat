@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite version="3.0.2" name="com.example.SkippedTest" time="0.150" tests="3" errors="0" skipped="2" failures="0">
+  <testcase name="testSuccess" classname="com.example.SkippedTest" time="0.100"/>
+  <testcase name="testSkipped1" classname="com.example.SkippedTest" time="0.025">
+    <skipped message="Test disabled until feature X is implemented"/>
+  </testcase>
+  <testcase name="testSkipped2" classname="com.example.SkippedTest" time="0.025">
+    <skipped>Conditionally skipped on Windows</skipped>
+  </testcase>
+</testsuite>

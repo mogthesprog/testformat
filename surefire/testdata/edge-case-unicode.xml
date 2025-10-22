@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite version="3.0.2" name="com.example.Unicode测试🎉" time="0.200" tests="2" errors="0" skipped="0" failures="1">
+  <testcase name="test_emoji_🚀" classname="日本語クラス" time="0.100"/>
+  <testcase name="test_unicode_Ελληνικά" classname="com.example.UnicodeTest" time="0.100">
+    <failure message="Failed with emoji 😢" type="AssertionError"><![CDATA[Stack trace with unicode: 你好世界
+And emoji: ✅ ❌ ⚠️
+Καλημέρα κόσμε 🌍]]></failure>
+  </testcase>
+</testsuite>

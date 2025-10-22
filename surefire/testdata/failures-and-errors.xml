@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite version="3.0.2" name="com.example.FailureTest" time="0.350" tests="4" errors="1" skipped="0" failures="2">
+  <testcase name="testSuccess" classname="com.example.FailureTest" time="0.100"/>
+  <testcase name="testFailure" classname="com.example.FailureTest" time="0.100">
+    <failure message="Expected &lt;5&gt; but was &lt;3&gt;" type="org.junit.ComparisonFailure"><![CDATA[org.junit.ComparisonFailure: Expected <5> but was <3>
+	at com.example.FailureTest.testFailure(FailureTest.java:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)]]></failure>
+    <system-out>Debug output from test</system-out>
+    <system-err>Warning message</system-err>
+  </testcase>
+  <testcase name="testError" classname="com.example.FailureTest" time="0.050">
+    <error message="NullPointerException at line 15" type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException: Cannot invoke method on null object
+	at com.example.FailureTest.testError(FailureTest.java:15)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)]]></error>
+  </testcase>
+  <testcase name="testMultipleFailures" classname="com.example.FailureTest" time="0.100">
+    <failure message="First assertion failed" type="org.junit.AssertionError">First failure details</failure>
+    <failure message="Second assertion failed" type="org.junit.AssertionError">Second failure details</failure>
+  </testcase>
+</testsuite>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite version="3.0.2" name="com.example.GroupedTest" time="0.400" tests="4" errors="0" skipped="0" failures="0" group="integration">
+  <properties>
+    <property name="test.environment" value="staging"/>
+    <property name="test.group" value="integration"/>
+  </properties>
+  <testcase name="testDatabase" classname="com.example.GroupedTest" group="database" time="0.150"/>
+  <testcase name="testAPI" classname="com.example.GroupedTest" group="api" time="0.100"/>
+  <testcase name="testUI" classname="com.example.GroupedTest" group="ui" time="0.100"/>
+  <testcase name="testIntegration" classname="com.example.GroupedTest" group="integration" time="0.050"/>
+  <system-out>Suite level output</system-out>
+  <system-err>Suite level warnings</system-err>
+</testsuite>
