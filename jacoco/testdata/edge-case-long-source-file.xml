@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE report PUBLIC "-//JACOCO//DTD Report 1.1//EN" "report.dtd">
+<report name="Long Source File Coverage">
+	<sessioninfo id="long-file-test" start="1705328422000" dump="1705328425000"/>
+	<package name="com/example/longfile">
+		<class name="com/example/longfile/LargeClass" sourcefilename="LargeClass.java">
+			<method name="method1" desc="()V" line="50">
+				<counter type="INSTRUCTION" missed="0" covered="10"/>
+				<counter type="LINE" missed="0" covered="3"/>
+				<counter type="METHOD" missed="0" covered="1"/>
+			</method>
+			<method name="method2" desc="()V" line="150">
+				<counter type="INSTRUCTION" missed="5" covered="5"/>
+				<counter type="LINE" missed="2" covered="2"/>
+				<counter type="METHOD" missed="0" covered="1"/>
+			</method>
+			<counter type="INSTRUCTION" missed="5" covered="15"/>
+			<counter type="LINE" missed="2" covered="5"/>
+			<counter type="METHOD" missed="0" covered="2"/>
+			<counter type="CLASS" missed="0" covered="1"/>
+		</class>
+		<sourcefile name="LargeClass.java">
+			<line nr="1" mi="0" ci="2" mb="0" cb="0"/>
+			<line nr="10" mi="0" ci="3" mb="0" cb="0"/>
+			<line nr="25" mi="2" ci="0" mb="0" cb="0"/>
+			<line nr="50" mi="0" ci="4" mb="0" cb="0"/>
+			<line nr="51" mi="0" ci="3" mb="0" cb="0"/>
+			<line nr="52" mi="0" ci="3" mb="0" cb="0"/>
+			<line nr="75" mi="0" ci="5" mb="1" cb="1"/>
+			<line nr="100" mi="0" ci="8" mb="0" cb="2"/>
+			<line nr="125" mi="3" ci="0" mb="0" cb="0"/>
+			<line nr="150" mi="0" ci="2" mb="0" cb="0"/>
+			<line nr="151" mi="0" ci="3" mb="1" cb="1"/>
+			<line nr="152" mi="2" ci="0" mb="0" cb="0"/>
+			<line nr="175" mi="0" ci="4" mb="0" cb="0"/>
+			<line nr="200" mi="0" ci="6" mb="0" cb="0"/>
+			<line nr="225" mi="0" ci="3" mb="0" cb="0"/>
+			<line nr="250" mi="0" ci="2" mb="0" cb="0"/>
+			<line nr="275" mi="0" ci="5" mb="2" cb="0"/>
+			<line nr="300" mi="0" ci="4" mb="0" cb="0"/>
+			<line nr="325" mi="0" ci="3" mb="0" cb="0"/>
+			<line nr="350" mi="0" ci="2" mb="0" cb="0"/>
+			<line nr="375" mi="0" ci="6" mb="0" cb="0"/>
+			<line nr="400" mi="0" ci="4" mb="0" cb="0"/>
+			<line nr="425" mi="0" ci="3" mb="0" cb="0"/>
+			<line nr="450" mi="0" ci="2" mb="0" cb="0"/>
+			<line nr="475" mi="0" ci="5" mb="0" cb="0"/>
+			<line nr="500" mi="0" ci="3" mb="0" cb="0"/>
+			<counter type="INSTRUCTION" missed="7" covered="80"/>
+			<counter type="BRANCH" missed="0" covered="4"/>
+			<counter type="LINE" missed="3" covered="23"/>
+		</sourcefile>
+		<counter type="INSTRUCTION" missed="7" covered="80"/>
+		<counter type="BRANCH" missed="0" covered="4"/>
+		<counter type="LINE" missed="3" covered="23"/>
+		<counter type="METHOD" missed="0" covered="2"/>
+		<counter type="CLASS" missed="0" covered="1"/>
+	</package>
+	<counter type="INSTRUCTION" missed="7" covered="80"/>
+	<counter type="BRANCH" missed="0" covered="4"/>
+	<counter type="LINE" missed="3" covered="23"/>
+	<counter type="METHOD" missed="0" covered="2"/>
+	<counter type="CLASS" missed="0" covered="1"/>
+</report>

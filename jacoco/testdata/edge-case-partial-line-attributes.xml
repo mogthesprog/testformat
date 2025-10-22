@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE report PUBLIC "-//JACOCO//DTD Report 1.1//EN" "report.dtd">
+<report name="Partial Line Attributes Test">
+	<sessioninfo id="partial-test" start="1705328422000" dump="1705328425000"/>
+	<package name="com/example/partial">
+		<class name="com/example/partial/PartialCoverage" sourcefilename="PartialCoverage.java">
+			<counter type="INSTRUCTION" missed="10" covered="20"/>
+			<counter type="LINE" missed="3" covered="7"/>
+			<counter type="CLASS" missed="0" covered="1"/>
+		</class>
+		<sourcefile name="PartialCoverage.java">
+			<line nr="5" mi="0" ci="4"/>
+			<line nr="10" mi="2" ci="0"/>
+			<line nr="15" mi="0" ci="3" mb="1" cb="1"/>
+			<line nr="20" mi="0" ci="5"/>
+			<line nr="25" mb="2" cb="0"/>
+			<line nr="30" ci="8"/>
+			<counter type="INSTRUCTION" missed="2" covered="20"/>
+			<counter type="BRANCH" missed="3" covered="1"/>
+			<counter type="LINE" missed="1" covered="5"/>
+		</sourcefile>
+		<counter type="INSTRUCTION" missed="10" covered="20"/>
+		<counter type="BRANCH" missed="3" covered="1"/>
+		<counter type="LINE" missed="3" covered="7"/>
+		<counter type="CLASS" missed="0" covered="1"/>
+	</package>
+	<counter type="INSTRUCTION" missed="10" covered="20"/>
+	<counter type="BRANCH" missed="3" covered="1"/>
+	<counter type="LINE" missed="3" covered="7"/>
+	<counter type="CLASS" missed="0" covered="1"/>
+</report>

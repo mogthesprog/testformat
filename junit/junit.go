@@ -13,7 +13,7 @@ type TestSuites struct {
 	Assertions int         `xml:"assertions,attr,omitempty" json:"assertions,omitempty"`
 	Time       string      `xml:"time,attr,omitempty" json:"time,omitempty"`
 	Timestamp  string      `xml:"timestamp,attr,omitempty" json:"timestamp,omitempty"`
-	Suites     []TestSuite `xml:"testsuite" json:"testsuites"`
+	Suites     []TestSuite `xml:"testsuite" json:"testSuites"`
 }
 
 // TestSuite represents a collection of test cases
@@ -33,16 +33,16 @@ type TestSuite struct {
 	File       string       `xml:"file,attr,omitempty" json:"file,omitempty"`
 	Properties *Properties  `xml:"properties,omitempty" json:"properties,omitempty"`
 	Suites     []TestSuite  `xml:"testsuite,omitempty" json:"suites,omitempty"`
-	TestCases  []TestCase   `xml:"testcase" json:"testcases,omitempty"`
-	SystemOut  string       `xml:"system-out,omitempty" json:"system_out,omitempty"`
-	SystemErr  string       `xml:"system-err,omitempty" json:"system_err,omitempty"`
+	TestCases  []TestCase   `xml:"testcase" json:"testCases,omitempty"`
+	SystemOut  string       `xml:"system-out,omitempty" json:"systemOut,omitempty"`
+	SystemErr  string       `xml:"system-err,omitempty" json:"systemErr,omitempty"`
 }
 
 // TestCase represents an individual test
 type TestCase struct {
 	XMLName    xml.Name    `xml:"testcase" json:"-"`
 	Name       string      `xml:"name,attr" json:"name"`
-	Classname  string      `xml:"classname,attr,omitempty" json:"classname,omitempty"`
+	Classname  string      `xml:"classname,attr,omitempty" json:"className,omitempty"`
 	Time       string      `xml:"time,attr,omitempty" json:"time,omitempty"`
 	Assertions int         `xml:"assertions,attr,omitempty" json:"assertions,omitempty"`
 	File       string      `xml:"file,attr,omitempty" json:"file,omitempty"`
@@ -51,8 +51,8 @@ type TestCase struct {
 	Skipped    *Skipped    `xml:"skipped,omitempty" json:"skipped,omitempty"`
 	Failure    *Failure    `xml:"failure,omitempty" json:"failure,omitempty"`
 	Error      *Error      `xml:"error,omitempty" json:"error,omitempty"`
-	SystemOut  string      `xml:"system-out,omitempty" json:"system_out,omitempty"`
-	SystemErr  string      `xml:"system-err,omitempty" json:"system_err,omitempty"`
+	SystemOut  string      `xml:"system-out,omitempty" json:"systemOut,omitempty"`
+	SystemErr  string      `xml:"system-err,omitempty" json:"systemErr,omitempty"`
 }
 
 // Properties represents key-value properties
