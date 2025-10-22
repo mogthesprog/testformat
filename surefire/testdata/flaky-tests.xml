@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite version="3.0.2" name="com.example.FlakyTest" time="0.450" tests="3" errors="0" skipped="0" failures="0">
+  <testcase name="testFlakyFailure" classname="com.example.FlakyTest" time="0.200">
+    <flakyFailure message="Intermittent timeout" type="org.junit.AssertionError">
+      <stackTrace><![CDATA[org.junit.AssertionError: Intermittent timeout
+	at com.example.FlakyTest.testFlakyFailure(FlakyTest.java:25)]]></stackTrace>
+      <system-out>First attempt stdout</system-out>
+      <system-err>First attempt stderr</system-err>
+    </flakyFailure>
+    <system-out>Final successful attempt stdout</system-out>
+  </testcase>
+  <testcase name="testFlakyError" classname="com.example.FlakyTest" time="0.150">
+    <flakyError message="Network connection reset" type="java.net.SocketException">
+      <stackTrace><![CDATA[java.net.SocketException: Connection reset
+	at com.example.FlakyTest.testFlakyError(FlakyTest.java:35)]]></stackTrace>
+    </flakyError>
+  </testcase>
+  <testcase name="testSuccess" classname="com.example.FlakyTest" time="0.100"/>
+</testsuite>

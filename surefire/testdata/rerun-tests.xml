@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite version="3.0.2" name="com.example.RerunTest" time="0.600" tests="2" errors="0" skipped="0" failures="0">
+  <testcase name="testWithRerunFailure" classname="com.example.RerunTest" time="0.350">
+    <rerunFailure message="First run failed" type="org.junit.AssertionError">
+      <stackTrace><![CDATA[org.junit.AssertionError: First run failed
+	at com.example.RerunTest.testWithRerunFailure(RerunTest.java:20)]]></stackTrace>
+      <system-out>First run output</system-out>
+      <system-err>First run error</system-err>
+    </rerunFailure>
+    <rerunFailure message="Second run also failed" type="org.junit.AssertionError">
+      <stackTrace><![CDATA[org.junit.AssertionError: Second run also failed
+	at com.example.RerunTest.testWithRerunFailure(RerunTest.java:20)]]></stackTrace>
+      <system-out>Second run output</system-out>
+    </rerunFailure>
+    <system-out>Final successful run output</system-out>
+  </testcase>
+  <testcase name="testWithRerunError" classname="com.example.RerunTest" time="0.250">
+    <rerunError message="Transient error" type="java.io.IOException">
+      <stackTrace><![CDATA[java.io.IOException: Transient error
+	at com.example.RerunTest.testWithRerunError(RerunTest.java:30)]]></stackTrace>
+    </rerunError>
+  </testcase>
+</testsuite>
