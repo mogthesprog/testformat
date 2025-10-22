@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE report PUBLIC "-//JACOCO//DTD Report 1.1//EN" "report.dtd">
+<report name="Multiple Packages Without Groups">
+	<sessioninfo id="flat-structure-test" start="1705328422000" dump="1705328425000"/>
+	<package name="com/example/package1">
+		<class name="com/example/package1/ClassA">
+			<counter type="INSTRUCTION" missed="5" covered="20"/>
+			<counter type="CLASS" missed="0" covered="1"/>
+		</class>
+		<counter type="INSTRUCTION" missed="5" covered="20"/>
+		<counter type="CLASS" missed="0" covered="1"/>
+	</package>
+	<package name="com/example/package2">
+		<class name="com/example/package2/ClassB">
+			<counter type="INSTRUCTION" missed="10" covered="30"/>
+			<counter type="CLASS" missed="0" covered="1"/>
+		</class>
+		<counter type="INSTRUCTION" missed="10" covered="30"/>
+		<counter type="CLASS" missed="0" covered="1"/>
+	</package>
+	<package name="com/example/package3">
+		<class name="com/example/package3/ClassC">
+			<counter type="INSTRUCTION" missed="0" covered="15"/>
+			<counter type="CLASS" missed="0" covered="1"/>
+		</class>
+		<counter type="INSTRUCTION" missed="0" covered="15"/>
+		<counter type="CLASS" missed="0" covered="1"/>
+	</package>
+	<counter type="INSTRUCTION" missed="15" covered="65"/>
+	<counter type="CLASS" missed="0" covered="3"/>
+</report>

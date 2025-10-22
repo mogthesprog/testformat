@@ -312,7 +312,7 @@ func TestErrorHandling_InvalidJSON(t *testing.T) {
 	}{
 		{
 			name:     "invalid json syntax",
-			jsonData: `{"name": "test", "testcases": [}`,
+			jsonData: `{"name": "test", "testCases": [}`,
 		},
 		{
 			name:     "wrong type for integer field",
@@ -646,16 +646,16 @@ func TestJSONFormat_StructureValidation(t *testing.T) {
 		t.Errorf("Expected tests=2, got %v", jsonMap["tests"])
 	}
 
-	testcases, ok := jsonMap["testcases"].([]interface{})
+	testCases, ok := jsonMap["testCases"].([]interface{})
 	if !ok {
-		t.Fatalf("Expected testcases to be an array")
+		t.Fatalf("Expected testCases to be an array")
 	}
 
-	if len(testcases) != 2 {
-		t.Errorf("Expected 2 testcases, got %d", len(testcases))
+	if len(testCases) != 2 {
+		t.Errorf("Expected 2 testCases, got %d", len(testCases))
 	}
 
-	tc2 := testcases[1].(map[string]interface{})
+	tc2 := testCases[1].(map[string]interface{})
 	if _, hasFailure := tc2["failure"]; !hasFailure {
 		t.Error("Expected second testcase to have failure")
 	}
@@ -690,11 +690,11 @@ func TestJSONFormat_OmitEmpty(t *testing.T) {
 		t.Error("Expected failures field to be omitted when zero")
 	}
 
-	testcases := jsonMap["testcases"].([]interface{})
-	tc := testcases[0].(map[string]interface{})
+	testCases := jsonMap["testCases"].([]interface{})
+	tc := testCases[0].(map[string]interface{})
 
-	if _, hasClassname := tc["classname"]; hasClassname {
-		t.Error("Expected classname to be omitted when empty")
+	if _, hasClassName := tc["className"]; hasClassName {
+		t.Error("Expected className to be omitted when empty")
 	}
 
 	if _, hasTime := tc["time"]; hasTime {
@@ -728,23 +728,23 @@ func TestJSONFormat_SystemOutErrFieldNames(t *testing.T) {
 		t.Fatalf("Failed to unmarshal JSON to map: %v", err)
 	}
 
-	if jsonMap["system_out"] != "suite stdout" {
-		t.Errorf("Expected system_out field in JSON, got %v", jsonMap)
+	if jsonMap["systemOut"] != "suite stdout" {
+		t.Errorf("Expected systemOut field in JSON, got %v", jsonMap)
 	}
 
-	if jsonMap["system_err"] != "suite stderr" {
-		t.Errorf("Expected system_err field in JSON, got %v", jsonMap)
+	if jsonMap["systemErr"] != "suite stderr" {
+		t.Errorf("Expected systemErr field in JSON, got %v", jsonMap)
 	}
 
-	testcases := jsonMap["testcases"].([]interface{})
-	tc := testcases[0].(map[string]interface{})
+	testCases := jsonMap["testCases"].([]interface{})
+	tc := testCases[0].(map[string]interface{})
 
-	if tc["system_out"] != "stdout content" {
-		t.Errorf("Expected system_out in testcase, got %v", tc)
+	if tc["systemOut"] != "stdout content" {
+		t.Errorf("Expected systemOut in testcase, got %v", tc)
 	}
 
-	if tc["system_err"] != "stderr content" {
-		t.Errorf("Expected system_err in testcase, got %v", tc)
+	if tc["systemErr"] != "stderr content" {
+		t.Errorf("Expected systemErr in testcase, got %v", tc)
 	}
 }
 
@@ -864,13 +864,13 @@ func TestJSONFormat_TestSuitesWrapper(t *testing.T) {
 		t.Errorf("Expected name=AllTests, got %v", jsonMap["name"])
 	}
 
-	suitesArray, ok := jsonMap["testsuites"].([]interface{})
+	suitesArray, ok := jsonMap["testSuites"].([]interface{})
 	if !ok {
-		t.Fatalf("Expected testsuites to be an array, got %T", jsonMap["testsuites"])
+		t.Fatalf("Expected testSuites to be an array, got %T", jsonMap["testSuites"])
 	}
 
 	if len(suitesArray) != 2 {
-		t.Errorf("Expected 2 testsuites, got %d", len(suitesArray))
+		t.Errorf("Expected 2 testSuites, got %d", len(suitesArray))
 	}
 }
 
@@ -942,8 +942,8 @@ func FuzzTestSuitesXML(f *testing.F) {
 func FuzzJSON(f *testing.F) {
 	seeds := []string{
 		`{"name":"test"}`,
-		`{"name":"test","testcases":[{"name":"t1"}]}`,
-		`{"name":"test","testcases":[{"name":"t1","failure":{"message":"failed"}}]}`,
+		`{"name":"test","testCases":[{"name":"t1"}]}`,
+		`{"name":"test","testCases":[{"name":"t1","failure":{"message":"failed"}}]}`,
 	}
 
 	for _, seed := range seeds {
