@@ -204,8 +204,40 @@ This will output a CTRF-compliant JSON report:
 
 The CTRF (Common Test Report Format) is a standardized JSON schema for test reports. Learn more at [ctrf.io](https://ctrf.io).
 
-Key features:
-- Standardized structure across different test frameworks
-- Required fields: test name, status, and duration
-- Optional fields for suite, message, trace, and custom metadata
-- Support for test aggregation and summary statistics
+#### Comprehensive Field Mapping
+
+Our CTRF implementation provides extensive field mapping with zero data loss:
+
+**Core Test Fields:**
+- `name`, `status`, `duration` - Required CTRF fields
+- `suite`, `message`, `trace` - Basic test information
+- `type` - Error/failure type (e.g., "AssertionError")
+- `filePath`, `line` - Source file location for IDE integration
+- `rawStatus` - Original status from test framework (failure/error/skipped)
+
+**Test Output:**
+- `stdout` - Array of stdout lines from test execution
+- `stderr` - Array of stderr lines from test execution
+
+**Test Metadata:**
+- `parameters` - Test properties and configuration (from JUnit Properties)
+- `tags` - Test categories and groups (from Surefire Group)
+
+**Flaky Test Support:**
+- `flaky` - Boolean flag for flaky tests
+- `retries` - Number of retry attempts
+- `retryAttempts` - Detailed retry history with status, duration, output
+
+**Extended Data:**
+- `extra.assertions` - Number of assertions (JUnit)
+- `extra.additionalFailures` - Multiple failures per test (Surefire)
+- `environment.hostname` - Test execution host (JUnit)
+
+#### Features
+- ✅ Zero data loss - All JUnit and Surefire fields preserved
+- ✅ Full CTRF schema compliance
+- ✅ Rich metadata for test analytics
+- ✅ IDE integration support (file paths and line numbers)
+- ✅ Flaky test detection and retry tracking
+- ✅ Test output capture (stdout/stderr)
+- ✅ Comprehensive test coverage

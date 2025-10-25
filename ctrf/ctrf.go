@@ -48,12 +48,38 @@ type Summary struct {
 
 // TestResult represents an individual test case
 type TestResult struct {
-	Name     string      `json:"name"`
+	// Required fields
+	Name     string `json:"name"`
+	Status   string `json:"status"` // passed, failed, skipped, pending, other
+	Duration int64  `json:"duration"` // milliseconds
+
+	// Optional standard CTRF fields
+	Suite         string         `json:"suite,omitempty"`
+	Message       string         `json:"message,omitempty"`
+	Trace         string         `json:"trace,omitempty"`
+	FilePath      string         `json:"filePath,omitempty"`
+	Line          int            `json:"line,omitempty"`
+	RawStatus     string         `json:"rawStatus,omitempty"`
+	Tags          []string       `json:"tags,omitempty"`
+	Type          string         `json:"type,omitempty"` // Error/failure type
+	Retries       int            `json:"retries,omitempty"`
+	RetryAttempts []RetryAttempt `json:"retryAttempts,omitempty"`
+	Flaky         bool           `json:"flaky,omitempty"`
+	Stdout        []string       `json:"stdout,omitempty"`
+	Stderr        []string       `json:"stderr,omitempty"`
+	Parameters    interface{}    `json:"parameters,omitempty"`
+	Extra         interface{}    `json:"extra,omitempty"`
+}
+
+// RetryAttempt represents a test retry attempt
+type RetryAttempt struct {
+	Attempt  int         `json:"attempt"`
 	Status   string      `json:"status"`
-	Duration int64       `json:"duration"`
-	Suite    string      `json:"suite,omitempty"`
+	Duration int64       `json:"duration,omitempty"`
 	Message  string      `json:"message,omitempty"`
 	Trace    string      `json:"trace,omitempty"`
+	Stdout   []string    `json:"stdout,omitempty"`
+	Stderr   []string    `json:"stderr,omitempty"`
 	Extra    interface{} `json:"extra,omitempty"`
 }
 
@@ -114,4 +140,66 @@ func mapStatus(hasFailure, hasError, hasSkipped bool) string {
 		return "skipped"
 	}
 	return "passed"
+}
+
+// splitLines splits a string into lines, filtering out empty lines
+func splitLines(s string) []string {
+	if s == "" {
+		return nil
+	}
+
+	lines := []string{}
+	for _, line := range splitString(s, '\n') {
+		if trimmed := trimSpace(line); trimmed != "" {
+			lines = append(lines, trimmed)
+		}
+	}
+
+	if len(lines) == 0 {
+		return nil
+	}
+	return lines
+}
+
+// splitString splits a string by a delimiter
+func splitString(s string, delim rune) []string {
+	var result []string
+	var current string
+
+	for _, r := range s {
+		if r == delim {
+			result = append(result, current)
+			current = ""
+		} else {
+			current += string(r)
+		}
+	}
+	result = append(result, current)
+	return result
+}
+
+// trimSpace removes leading and trailing whitespace
+func trimSpace(s string) string {
+	start := 0
+	end := len(s)
+
+	// Trim leading whitespace
+	for start < end {
+		r := rune(s[start])
+		if r != ' ' && r != '\t' && r != '\n' && r != '\r' {
+			break
+		}
+		start++
+	}
+
+	// Trim trailing whitespace
+	for end > start {
+		r := rune(s[end-1])
+		if r != ' ' && r != '\t' && r != '\n' && r != '\r' {
+			break
+		}
+		end--
+	}
+
+	return s[start:end]
 }
