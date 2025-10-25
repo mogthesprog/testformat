@@ -234,13 +234,14 @@ Our CTRF implementation provides extensive field mapping with zero data loss:
 - `environment.hostname` - Test execution host (JUnit)
 
 #### Features
-- ✅ Zero data loss - All JUnit and Surefire fields preserved
-- ✅ Full CTRF schema compliance
-- ✅ Rich metadata for test analytics
-- ✅ IDE integration support (file paths and line numbers)
-- ✅ Flaky test detection and retry tracking
-- ✅ Test output capture (stdout/stderr)
-- ✅ Comprehensive test coverage
+
+- [x] Zero data loss - All JUnit and Surefire fields preserved
+- [x] Full CTRF schema compliance
+- [x] Rich metadata for test analytics
+- [x] IDE integration support (file paths and line numbers)
+- [x] Flaky test detection and retry tracking
+- [x] Test output capture (stdout/stderr)
+- [x] Comprehensive test coverage
 
 #### Known Limitations
 
