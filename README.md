@@ -241,3 +241,9 @@ Our CTRF implementation provides extensive field mapping with zero data loss:
 - ✅ Flaky test detection and retry tracking
 - ✅ Test output capture (stdout/stderr)
 - ✅ Comprehensive test coverage
+
+#### Known Limitations
+
+- **Per-test timing** (`start`/`stop` timestamps) - Not available in JUnit/Surefire XML formats
+- **Suite metadata** (package name, suite ID) - Not preserved in CTRF conversion (low priority)
+
