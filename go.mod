@@ -1,5 +1,5 @@
 module github.com/mogthesprog/testformat
 
-go 1.25.1
+go 1.22
 
 require github.com/google/go-cmp v0.7.0 // indirect
