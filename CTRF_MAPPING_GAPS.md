@@ -125,10 +125,10 @@ JUnit.Properties -> CTRF.TestResult.Parameters {
 
 ---
 
-### 8. **start / stop** ✅ Standard CTRF Fields
+### 8. **start / stop** ⚠️ NOT APPLICABLE
 **CTRF Has:** `start` (integer timestamp), `stop` (integer timestamp)
-**We Currently:** ❌ Not setting per-test timing
-**Impact:** LOW (JUnit/Surefire don't provide this)
+**Status:** ⚠️ Not implemented - JUnit/Surefire don't provide per-test timing
+**Impact:** LOW (source data not available)
 
 ---
 
@@ -174,7 +174,7 @@ if tc.Skipped != nil {
 
 ---
 
-## Updated TestResult Type (Recommended)
+## ✅ Implemented TestResult Type
 
 ```go
 type TestResult struct {
